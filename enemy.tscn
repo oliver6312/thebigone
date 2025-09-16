@@ -1,46 +1,43 @@
 [gd_scene load_steps=14 format=3 uid="uid://vptyxcuxw8vd"]
 
 [ext_resource type="Script" uid="uid://btk4md0d5k7hx" path="res://enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://dh0yd26rjiha1" path="res://0x72_DungeonTilesetII_v1.7/frames/big_demon_all_anim.png" id="1_7k104"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4gyqm"]
-atlas = ExtResource("1_7k104")
-region = Rect2(0, 0, 32, 36)
+[ext_resource type="Texture2D" uid="uid://d1rdnwye1jf5u" path="res://0x72_DungeonTilesetII_v1.7/frames/plague_big_demon_all_anim.png" id="2_4gyqm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qi2p4"]
-atlas = ExtResource("1_7k104")
-region = Rect2(32, 0, 32, 36)
+atlas = ExtResource("2_4gyqm")
+region = Rect2(0, 0, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iifgy"]
-atlas = ExtResource("1_7k104")
-region = Rect2(64, 0, 32, 36)
+atlas = ExtResource("2_4gyqm")
+region = Rect2(32, 0, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epg4t"]
-atlas = ExtResource("1_7k104")
-region = Rect2(96, 0, 32, 36)
+atlas = ExtResource("2_4gyqm")
+region = Rect2(64, 0, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3yqyl"]
-atlas = ExtResource("1_7k104")
-region = Rect2(0, 36, 32, 36)
+atlas = ExtResource("2_4gyqm")
+region = Rect2(96, 0, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wujgv"]
-atlas = ExtResource("1_7k104")
-region = Rect2(32, 36, 32, 36)
+atlas = ExtResource("2_4gyqm")
+region = Rect2(128, 0, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hb8ge"]
-atlas = ExtResource("1_7k104")
-region = Rect2(64, 36, 32, 36)
+atlas = ExtResource("2_4gyqm")
+region = Rect2(160, 0, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e1ltt"]
-atlas = ExtResource("1_7k104")
-region = Rect2(96, 36, 32, 36)
+atlas = ExtResource("2_4gyqm")
+region = Rect2(192, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxifv"]
+atlas = ExtResource("2_4gyqm")
+region = Rect2(224, 0, 32, 36)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dxifv"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4gyqm")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qi2p4")
 }, {
@@ -49,15 +46,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_epg4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yqyl")
 }],
 "loop": true,
 "name": &"Idle",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3yqyl")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wujgv")
 }, {
@@ -66,6 +63,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e1ltt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxifv")
 }],
 "loop": true,
 "name": &"Run",
@@ -73,7 +73,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7k104"]
-radius = 153.003
+radius = 62.0081
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k104"]
 size = Vector2(18, 23)
@@ -83,9 +83,7 @@ script = ExtResource("1_4gyqm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dxifv")
-animation = &"Run"
-frame = 2
-frame_progress = 0.783813
+animation = &"Idle"
 offset = Vector2(0, -18)
 
 [node name="DetectionArea" type="Area2D" parent="."]

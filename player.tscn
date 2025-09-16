@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgq8ctr7k2kqp"]
+[gd_scene load_steps=13 format=3 uid="uid://bgq8ctr7k2kqp"]
 
 [ext_resource type="Script" uid="uid://coe2q166i7lj4" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://i36uv7kr25o6" path="res://0x72_DungeonTilesetII_v1.7/frames/knight_f_all_anim_f0.png" id="2_onrkg"]
@@ -72,9 +72,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(12, 16)
+
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_4flbx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_nvl01")
-animation = &"Run"
+animation = &"Idle"
+frame_progress = 0.928186
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -8)
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(672, 10)
+offset = Vector2(0, 40)
+zoom = Vector2(3, 3)
+limit_left = -108
+limit_right = 108
+position_smoothing_enabled = true
