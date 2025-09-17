@@ -6,6 +6,11 @@ extends CharacterBody2D
 
 var current_dir = "none"
 
+var enemy_inattack_range = false
+var enemy_attack_cooldown = true
+var health = 100
+var player_alive = true
+
 func get_input():
 	var input = Vector2()
 	if Input.is_action_pressed('ui_right'):
@@ -27,6 +32,14 @@ func get_input():
 	return input
 
 func _physics_process(delta):
+	enemy_attack()
+	if health <= 0:
+		player_alive = false
+		#go back to menu
+		health = 0
+		print("Player has been killed")
+		self.queue_free()
+	
 	var direction = get_input()
 	if direction.length() > 0:
 		velocity = velocity.lerp(direction.normalized() * speed, acceleration)
@@ -53,11 +66,22 @@ func player():
 	pass
 
 func _on_player_hitbox_body_entered(body: Node2D) -> void:
-	if body.has_method(enemy):
+	if body.has_method("enemy"):
+		enemy_inattack_range = true
 		
-	
-
 
 
 func _on_player_hitbox_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body.has_method("enemy"):
+		enemy_inattack_range = false
+
+func enemy_attack():
+	if enemy_inattack_range and enemy_attack_cooldown == true: 
+		health = health - 20
+		enemy_attack_cooldown = false
+		$attack_cooldown.start()
+		print (health)
+
+
+func _on_attack_cooldown_timeout() -> void:
+	enemy_attack_cooldown = true

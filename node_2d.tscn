@@ -274,6 +274,9 @@ tile_set = SubResource("TileSet_kdubu")
 
 [node name="Player" parent="." instance=ExtResource("5_kdubu")]
 position = Vector2(-81, 1)
+speed = 100
+friction = 0.2
+acceleration = 0.08
 
 [node name="Enemy" parent="." instance=ExtResource("5_q6r6c")]
 position = Vector2(-83, 231)
