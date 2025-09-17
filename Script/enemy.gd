@@ -9,7 +9,7 @@ var fireball_attack_cooldown = true
 var enemy_health = 100
 var enemy_alive = true
 @onready var healthbar: ProgressBar = $healthbar
-@onready var enemy_scene = preload("res://scenes/enemy.tscn")
+
 
 
 func _physics_process(delta: float) -> void:
@@ -67,9 +67,3 @@ func _on_attack_cooldown_timeout() -> void:
 
 func _ready() -> void:
 	healthbar.value = enemy_health
-
-func spawn_new_enemy():
-	var minion = enemy_scene.instantiate()
-	# Optionally set a random position
-	minion.position = Vector2(randf_range(-10, 0), randf_range(-10, 0))
-	add_child(minion)
