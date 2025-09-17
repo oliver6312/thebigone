@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bgq8ctr7k2kqp"]
+[gd_scene load_steps=14 format=3 uid="uid://bgq8ctr7k2kqp"]
 
 [ext_resource type="Script" uid="uid://coe2q166i7lj4" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://i36uv7kr25o6" path="res://0x72_DungeonTilesetII_v1.7/frames/knight_f_all_anim_f0.png" id="2_onrkg"]
@@ -75,10 +75,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(12, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
+size = Vector2(14, 17)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_4flbx")
+speed = null
+friction = null
+acceleration = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
@@ -87,6 +93,7 @@ animation = &"Idle"
 frame_progress = 0.928186
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(1, -8)
 shape = SubResource("RectangleShape2D_onrkg")
 
@@ -97,3 +104,12 @@ zoom = Vector2(3, 3)
 limit_left = -108
 limit_right = 108
 position_smoothing_enabled = true
+
+[node name="player_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_i3pqv")
+
+[connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]

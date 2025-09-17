@@ -48,3 +48,16 @@ func play_anim(movement):
 		anim.play("Run")
 	if movement == 0:
 		anim.play("Idle")
+
+func player():
+	pass
+
+func _on_player_hitbox_body_entered(body: Node2D) -> void:
+	if body.has_method(enemy):
+		
+	
+
+
+
+func _on_player_hitbox_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.
