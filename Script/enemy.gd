@@ -11,7 +11,6 @@ var enemy_alive = true
 @onready var healthbar: ProgressBar = $healthbar
 
 
-
 func _physics_process(delta: float) -> void:
 	fireball_attack()
 
