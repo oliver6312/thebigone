@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh7ni4hack8u8"]
+
+[ext_resource type="Script" uid="uid://c1dqcu75tbvpg" path="res://titlescreen.gd" id="1_6d6rd"]
+[ext_resource type="FontFile" uid="uid://c3cvokyqrgrtv" path="res://0x72_DungeonTilesetII_v1.7/font/JBLACK.TTF" id="2_3jj3l"]
+[ext_resource type="Texture2D" uid="uid://cwuwoptgcoonu" path="res://0x72_DungeonTilesetII_v1.7/gothic-castle-background.png" id="2_tt55a"]
+[ext_resource type="Theme" uid="uid://dov3tv42wfgcl" path="res://default.tres" id="3_t7v6v"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6d6rd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574, 229)
+scale = Vector2(7.19531, 5.375)
+texture = ExtResource("2_tt55a")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 397.0
+offset_right = 731.0
+offset_bottom = 503.0
+theme = ExtResource("3_t7v6v")
+text = "Start"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 96.0
+offset_right = 378.0
+offset_bottom = 134.0
+scale = Vector2(4, 4)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3jj3l")
+theme_override_font_sizes/font_size = 35
+text = "Vestibule"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

@@ -35,9 +35,7 @@ func _physics_process(delta):
 	small_enemy_attack()
 	if health <= 0:
 		player_alive = false
-		#go back to menu
-		health = 0
-		print("Player has been killed")
+		get_tree().change_scene_to_file("res://scenes/titlescreen.tscn")
 		self.queue_free()
 	
 	get_input()
@@ -70,7 +68,7 @@ func _on_player_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method("big_enemy"):
 		big_enemy_inattack_range = false
 	if body.has_method("small_enemy"):
-		big_enemy_inattack_range = false
+		small_enemy_inattack_range = false
 
 func big_enemy_attack():
 	if big_enemy_inattack_range and enemy_attack_cooldown == true: 
