@@ -4,7 +4,6 @@ extends CharacterBody2D
 @export var friction = 0.2
 @export var acceleration = 0.08
 @onready var healthbar: ProgressBar = $healthbar
-@onready var enemy_scene = preload("res://scenes/enemy.tscn")
 
 var current_dir = "none"
 
@@ -89,10 +88,3 @@ func _on_attack_cooldown_timeout() -> void:
 
 func _ready() -> void:
 	healthbar.value = health
-	spawn_new_enemy()
-
-func spawn_new_enemy():
-	var minion = enemy_scene.instantiate()
-	# Optionally set a random position
-	minion.position = Vector2(-10, 10)
-	get_tree().current_scene.add_child.call_deferred(minion)
