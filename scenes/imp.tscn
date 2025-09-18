@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ccsd7iopeksax"]
+[gd_scene load_steps=16 format=3 uid="uid://ccsd7iopeksax"]
 
 [ext_resource type="Script" uid="uid://iipaop8231qc" path="res://Script/imp.gd" id="1_l7lie"]
 [ext_resource type="Texture2D" uid="uid://bddv4ocaaw6xc" path="res://0x72_DungeonTilesetII_v1.7/frames/imp_all_anim.png" id="2_1s1ue"]
@@ -75,9 +75,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pkbq"]
 size = Vector2(13, 13)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nkryd"]
-radius = 81.0555
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iow7o"]
 size = Vector2(12, 12)
 
@@ -102,11 +99,6 @@ speed_scale = 2.0
 position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_2pkbq")
 
-[node name="DetectionArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
-shape = SubResource("CircleShape2D_nkryd")
-
 [node name="enemy_hitbox" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 4
@@ -127,9 +119,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_5fmm0")
 max_value = 20.0
 show_percentage = false
 
-[connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
-[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
-[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]

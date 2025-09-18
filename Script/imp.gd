@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-var speed = 30
-var player_chase = false
-var player = null
+var speed = 20
+var player_chase = true
+@onready var player = get_parent().get_node("Player")
 
 var fireball_inattack_range = false
 var fireball_attack_cooldown = true
@@ -10,7 +10,7 @@ var enemy_health = 20
 var enemy_alive = true
 @onready var healthbar: ProgressBar = $healthbar
 
-func enemy():
+func small_enemy():
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -25,9 +25,8 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
-		
-	else:
-		$AnimatedSprite2D.play("Idle")
+
+
 
 
 func _on_detection_area_body_entered(body: Node2D) -> void:

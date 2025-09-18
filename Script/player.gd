@@ -7,7 +7,8 @@ extends CharacterBody2D
 
 var current_dir = "none"
 
-var enemy_inattack_range = false
+var big_enemy_inattack_range = false
+var small_enemy_inattack_range = false
 var enemy_attack_cooldown = true
 var health = 100
 var player_alive = true
@@ -30,7 +31,8 @@ func get_input():
 		play_anim(0)
 
 func _physics_process(delta):
-	enemy_attack()
+	big_enemy_attack()
+	small_enemy_attack()
 	if health <= 0:
 		player_alive = false
 		#go back to menu
@@ -58,21 +60,34 @@ func player():
 	pass
 
 func _on_player_hitbox_body_entered(body: Node2D) -> void:
-	if body.has_method("enemy"):
-		enemy_inattack_range = true
+	if body.has_method("big_enemy"):
+		big_enemy_inattack_range = true
+	if body.has_method("small_enemy"):
+		small_enemy_inattack_range = true
 
 
 func _on_player_hitbox_body_exited(body: Node2D) -> void:
-	if body.has_method("enemy"):
-		enemy_inattack_range = false
+	if body.has_method("big_enemy"):
+		big_enemy_inattack_range = false
+	if body.has_method("small_enemy"):
+		big_enemy_inattack_range = false
 
-func enemy_attack():
-	if enemy_inattack_range and enemy_attack_cooldown == true: 
+func big_enemy_attack():
+	if big_enemy_inattack_range and enemy_attack_cooldown == true: 
 		health = health - 20
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
 		healthbar.value = health
 		print (health)
+
+func small_enemy_attack():
+	if small_enemy_inattack_range and enemy_attack_cooldown == true: 
+		health = health - 10
+		enemy_attack_cooldown = false
+		$attack_cooldown.start()
+		healthbar.value = health
+		print (health)
+
 
 func _on_attack_cooldown_timeout() -> void:
 	enemy_attack_cooldown = true
