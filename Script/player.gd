@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 100
-@export var friction = 0.2
+@export var friction = 0.1
 @export var acceleration = 0.08
 @onready var healthbar: ProgressBar = $healthbar
 
@@ -13,24 +13,21 @@ var health = 100
 var player_alive = true
 
 func get_input():
-	var input = Vector2()
+	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	if (Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") != Vector2.ZERO):
+		velocity = velocity.lerp(input_direction * speed, acceleration)
+	else:
+		velocity = velocity.lerp(Vector2.ZERO, friction)
+
 	if Input.is_action_pressed('ui_right'):
 		current_dir = "right"
-		play_anim(1)
-		input.x += 1
-	elif Input.is_action_pressed('ui_left'):
+	if Input.is_action_pressed('ui_left'):
 		current_dir = "left"
+
+	if (Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") != Vector2.ZERO):
 		play_anim(1)
-		input.x -= 1
-	elif Input.is_action_pressed('ui_down'):
-		play_anim(1)
-		input.y += 1
-	elif Input.is_action_pressed('ui_up'):
-		play_anim(1)
-		input.y -= 1
 	else:
 		play_anim(0)
-	return input
 
 func _physics_process(delta):
 	enemy_attack()
@@ -41,13 +38,7 @@ func _physics_process(delta):
 		print("Player has been killed")
 		self.queue_free()
 	
-	var direction = get_input()
-	if direction.length() > 0:
-		velocity = velocity.lerp(direction.normalized() * speed, acceleration)
-	else:
-		velocity = velocity.lerp(Vector2.ZERO, friction)
-	
-	set_up_direction(Vector2.UP)
+	get_input()
 	move_and_slide()
 	
 func play_anim(movement):

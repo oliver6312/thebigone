@@ -1,7 +1,9 @@
 extends Timer
 
-@onready var enemy_scene = preload("res://scenes/enemy.tscn")
+@onready var big_demon_scene = preload("res://scenes/enemy.tscn")
 @onready var player = get_parent()
+
+
 
 func _ready() -> void:
 	spawn_new_enemy()
@@ -11,7 +13,7 @@ func _on_timeout():
 
 
 func spawn_new_enemy():
-	var minion = enemy_scene.instantiate()
+	var minion = big_demon_scene.instantiate()
 	var x = randf_range(-175.0, 25.0)  # your random X offset
 	var y = player.position.y + 180
 	print("Position:")
