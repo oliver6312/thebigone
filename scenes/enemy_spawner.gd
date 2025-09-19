@@ -6,8 +6,7 @@ extends Timer
 
 
 
-func _ready() -> void:
-	spawn_new_enemy()
+
 
 func _on_timeout(): 
 	spawn_new_enemy()

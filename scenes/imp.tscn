@@ -73,7 +73,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pkbq"]
-size = Vector2(13, 13)
+size = Vector2(13.5, 14.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iow7o"]
 size = Vector2(12, 12)
@@ -85,6 +85,7 @@ bg_color = Color(0, 0, 0, 1)
 bg_color = Color(0.929412, 0.0352941, 0.105882, 1)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_l7lie")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -96,7 +97,7 @@ frame_progress = 0.203759
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7.5)
+position = Vector2(0.25, -6.75)
 shape = SubResource("RectangleShape2D_2pkbq")
 
 [node name="enemy_hitbox" type="Area2D" parent="."]

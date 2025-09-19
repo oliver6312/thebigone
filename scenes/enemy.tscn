@@ -85,6 +85,7 @@ bg_color = Color(0, 0, 0, 1)
 bg_color = Color(0.929412, 0.0352941, 0.105882, 1)
 
 [node name="Enemy" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_4gyqm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

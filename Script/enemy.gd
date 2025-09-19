@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 50
+var speed = 30
 var player_chase = true
 @onready var player = get_parent().get_node("Player")
 
@@ -17,7 +17,9 @@ func _physics_process(delta: float) -> void:
 	fireball_attack()
 
 	if player_chase:
-		position += (player.position - position)/speed
+		var direction = (player.position - position).normalized()
+		velocity = (direction*speed)
+		
 		
 		$AnimatedSprite2D.play("Run")
 		
@@ -25,6 +27,7 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
+	move_and_slide()
 
 
 
