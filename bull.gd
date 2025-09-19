@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-var enemy_health = 100
 var speed = 30
 var player_chase = true
 @onready var player = get_parent().get_node("Player")
 
 var fireball_inattack_range = false
 var fireball_attack_cooldown = true
+var enemy_health = 80
 var enemy_alive = true
 @onready var healthbar: ProgressBar = $healthbar
 
@@ -44,6 +44,7 @@ func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
 func fireball_attack():
 	if fireball_inattack_range: 
 		enemy_health = enemy_health - 2
+		speed = speed + 2
 		fireball_attack_cooldown = false
 		$attack_cooldown.start()
 		healthbar.value = enemy_health

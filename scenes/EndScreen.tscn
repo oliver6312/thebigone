@@ -1,17 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://box0negtxsu72"]
+[gd_scene load_steps=5 format=3 uid="uid://box0negtxsu72"]
 
 [ext_resource type="Script" uid="uid://3n8b06gtaqqs" path="res://Script/gameover.gd" id="1_qfurf"]
+[ext_resource type="Texture2D" uid="uid://crkrdkh0v6an7" path="res://0x72_DungeonTilesetII_v1.7/grave_background_update.png" id="2_8gjfw"]
+[ext_resource type="FontFile" uid="uid://c3cvokyqrgrtv" path="res://0x72_DungeonTilesetII_v1.7/font/JBLACK.TTF" id="3_olkmo"]
+[ext_resource type="FontFile" uid="uid://dug1cavbqanki" path="res://0x72_DungeonTilesetII_v1.7/font/DungeonFont.ttf" id="4_hxmv1"]
 
 [node name="GameOver" type="CanvasLayer"]
 script = ExtResource("1_qfurf")
 
 [node name="Panel" type="Panel" parent="."]
-modulate = Color(1, 1, 1, 0.639216)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(561.012, 323.121)
+scale = Vector2(2.96842, 2.8079)
+texture = ExtResource("2_8gjfw")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -31,19 +38,23 @@ layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_offset_y = 4
-theme_override_font_sizes/font_size = 72
+theme_override_fonts/font = ExtResource("3_olkmo")
+theme_override_font_sizes/font_size = 100
 text = "Game Over"
 
 [node name="highscore_label" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_olkmo")
+theme_override_font_sizes/font_size = 26
 text = "New High Score!"
 horizontal_alignment = 1
 
 [node name="currentscore_label" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("3_olkmo")
+theme_override_font_sizes/font_size = 38
 text = "Score: 0"
 horizontal_alignment = 1
 
@@ -59,12 +70,24 @@ columns = 2
 [node name="restart_button" type="Button" parent="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_hxmv1")
+theme_override_font_sizes/font_size = 40
 text = "Restart"
 
 [node name="quit_button" type="Button" parent="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_hxmv1")
+theme_override_font_sizes/font_size = 40
 text = "Quit"
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 473.0
+offset_top = 398.0
+offset_right = 687.0
+offset_bottom = 467.0
 
 [connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/restart_button" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/quit_button" to="." method="_on_quit_button_pressed"]

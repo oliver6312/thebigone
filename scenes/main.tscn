@@ -278,7 +278,7 @@ tile_map_data = PackedByteArray("AAACAP7/AQAAAAEAAADz//7/AQAAAAEAAADz//3/AQAAAAE
 tile_set = SubResource("TileSet_kdubu")
 
 [node name="Portal" parent="." instance=ExtResource("7_o6xl0")]
-position = Vector2(-78, 5214)
+position = Vector2(-77, 1283)
 
 [node name="Player" parent="." instance=ExtResource("3_tipki")]
 position = Vector2(-80, 31)

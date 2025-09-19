@@ -132,7 +132,7 @@ value = 50.0
 show_percentage = false
 
 [node name="enemy_spawner" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 6.0
 autostart = true
 script = ExtResource("3_qhqgy")
 

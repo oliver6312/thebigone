@@ -1,38 +1,38 @@
-[gd_scene load_steps=12 format=3 uid="uid://vptyxcuxw8vd"]
+[gd_scene load_steps=12 format=3 uid="uid://bt6t5ahupmg1u"]
 
-[ext_resource type="Script" uid="uid://btk4md0d5k7hx" path="res://Script/enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://d1rdnwye1jf5u" path="res://0x72_DungeonTilesetII_v1.7/frames/plague_big_demon_all_anim.png" id="2_md0e3"]
+[ext_resource type="Script" uid="uid://btk4md0d5k7hx" path="res://Script/enemy.gd" id="1_aeauj"]
+[ext_resource type="Texture2D" uid="uid://bymkn11xdrabj" path="res://0x72_DungeonTilesetII_v1.7/frames/bull_demon_all_anim.png" id="2_aeauj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ra3w"]
-atlas = ExtResource("2_md0e3")
-region = Rect2(128, 0, 32, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ubi4"]
+atlas = ExtResource("2_aeauj")
+region = Rect2(64, 0, 16, 23)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
-atlas = ExtResource("2_md0e3")
-region = Rect2(160, 0, 32, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqg2k"]
+atlas = ExtResource("2_aeauj")
+region = Rect2(80, 0, 16, 23)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c4w8v"]
-atlas = ExtResource("2_md0e3")
-region = Rect2(192, 0, 32, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_eoyrg"]
+atlas = ExtResource("2_aeauj")
+region = Rect2(96, 0, 16, 23)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
-atlas = ExtResource("2_md0e3")
-region = Rect2(224, 0, 32, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf1l1"]
+atlas = ExtResource("2_aeauj")
+region = Rect2(112, 0, 16, 23)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dxifv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4ra3w")
+"texture": SubResource("AtlasTexture_7ubi4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5uy6h")
+"texture": SubResource("AtlasTexture_hqg2k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c4w8v")
+"texture": SubResource("AtlasTexture_eoyrg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xwavj")
+"texture": SubResource("AtlasTexture_yf1l1")
 }],
 "loop": true,
 "name": &"Run",
@@ -51,9 +51,9 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ra3w"]
 bg_color = Color(0.929412, 0.0352941, 0.105882, 1)
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Bull" type="CharacterBody2D"]
 motion_mode = 1
-script = ExtResource("1_4gyqm")
+script = ExtResource("1_aeauj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 6)

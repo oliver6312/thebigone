@@ -50,7 +50,7 @@ func _physics_process(delta):
 			gameover_menu = gameover_scene.instantiate() as GameOver
 			add_child(gameover_menu)
 			gameover_menu.set_score(score)
-		
+		#come with better solution later
 	
 	get_input()
 	move_and_slide()
@@ -68,7 +68,6 @@ func play_anim(movement):
 	if movement == 0:
 		anim.play("Idle")
 
-
 func _on_player_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("big_enemy"):
 		big_enemy_inattack_range = true
@@ -79,7 +78,6 @@ func _on_player_hitbox_body_entered(body: Node2D) -> void:
 		score += 100
 		self.global_position = Vector2(-10, 10)
 		hud.update_score(score)
-
 
 func _on_player_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method("big_enemy"):
@@ -102,7 +100,6 @@ func small_enemy_attack():
 		$attack_cooldown.start()
 		healthbar.value = health
 		print (health)
-
 
 func _on_attack_cooldown_timeout() -> void:
 	enemy_attack_cooldown = true
