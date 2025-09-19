@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TheBigOne"
-run/main_scene="uid://dh7ni4hack8u8"
+run/main_scene="uid://1nlc1olbbvtk"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

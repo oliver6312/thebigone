@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5mvj1r50djxd"]
+
+[ext_resource type="Script" uid="uid://dodnofiefv7yp" path="res://Script/PentagramPortalMain.gd" id="1_ymu1f"]
+[ext_resource type="Texture2D" uid="uid://te7s74nqloed" path="res://0x72_DungeonTilesetII_v1.7/pentagram_portal.png" id="2_5yxc1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymu1f"]
+radius = 11.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_ymu1f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5yxc1")
+
+[node name="Circle" type="CollisionShape2D" parent="."]
+light_mask = 8
+visibility_layer = 8
+position = Vector2(-5, -1)
+shape = SubResource("CircleShape2D_ymu1f")

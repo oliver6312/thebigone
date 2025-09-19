@@ -5,6 +5,10 @@ extends CharacterBody2D
 @export var acceleration = 0.08
 @onready var healthbar: ProgressBar = $healthbar
 
+const gameover_scene:PackedScene = preload("res://scenes/EndScreen.tscn")
+var gameover_menu:GameOver 
+var score: int = 0
+
 var current_dir = "none"
 
 var big_enemy_inattack_range = false
@@ -12,6 +16,11 @@ var small_enemy_inattack_range = false
 var enemy_attack_cooldown = true
 var health = 100
 var player_alive = true
+
+
+
+func player():
+	pass
 
 func get_input():
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -35,8 +44,11 @@ func _physics_process(delta):
 	small_enemy_attack()
 	if health <= 0:
 		player_alive = false
-		get_tree().change_scene_to_file("res://scenes/titlescreen.tscn")
-		self.queue_free()
+		if not gameover_menu:
+			gameover_menu = gameover_scene.instantiate() as GameOver
+			add_child(gameover_menu)
+			gameover_menu.set_score(score)
+		
 	
 	get_input()
 	move_and_slide()
@@ -54,14 +66,16 @@ func play_anim(movement):
 	if movement == 0:
 		anim.play("Idle")
 
-func player():
-	pass
 
 func _on_player_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("big_enemy"):
 		big_enemy_inattack_range = true
 	if body.has_method("small_enemy"):
 		small_enemy_inattack_range = true
+	if body.has_method("portal"):
+		print ("Player in portal")
+		score += 100
+		self.global_position = Vector2(-10, 10)
 
 
 func _on_player_hitbox_body_exited(body: Node2D) -> void:

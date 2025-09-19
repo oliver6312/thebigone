@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://coe2q166i7lj4" path="res://Script/player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://cbug6tpubkl82" path="res://0x72_DungeonTilesetII_v1.7/frames/knight_red_all_anim.png" id="2_g2els"]
-[ext_resource type="Script" uid="uid://cv73g1s1fb3t0" path="res://scenes/enemy_spawner.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://cv73g1s1fb3t0" path="res://Script/enemy_spawner.gd" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -109,8 +109,12 @@ limit_right = 108
 position_smoothing_enabled = true
 
 [node name="player_hitbox" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+light_mask = 9
+visibility_layer = 9
 position = Vector2(1, -8)
 shape = SubResource("RectangleShape2D_i3pqv")
 
