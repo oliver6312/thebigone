@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var friction = 0.1
 @export var acceleration = 0.08
 @onready var healthbar: ProgressBar = $healthbar
+@onready var hud: HUD = $"../HUD"
+
 
 const gameover_scene:PackedScene = preload("res://scenes/EndScreen.tscn")
 var gameover_menu:GameOver 
@@ -76,6 +78,7 @@ func _on_player_hitbox_body_entered(body: Node2D) -> void:
 		print ("Player in portal")
 		score += 100
 		self.global_position = Vector2(-10, 10)
+		hud.update_score(score)
 
 
 func _on_player_hitbox_body_exited(body: Node2D) -> void:
