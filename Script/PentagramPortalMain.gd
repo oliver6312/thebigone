@@ -8,6 +8,13 @@ extends CharacterBody2D
 @onready var flame_5: Sprite2D = $flame_5
 @onready var teleport: CharacterBody2D = $teleport
 @onready var circle: CollisionShape2D = $teleport/Circle
+@onready var timer: Timer = $Timer
+
+var candle_1_lit = false
+var candle_2_lit = false
+var candle_3_lit = false
+var candle_4_lit = false
+var candle_5_lit = false
 
 
 func _ready() -> void:
@@ -18,28 +25,46 @@ func _ready() -> void:
 	flame_5.visible = false
 	circle.disabled = true
 
+func _physics_process(delta):
+	if candle_1_lit == true and candle_2_lit == true and candle_3_lit == true and candle_4_lit == true and candle_5_lit == true:
+		circle.disabled = false
+	if candle_1_lit == false and candle_2_lit == false and candle_3_lit == false and candle_4_lit == false and candle_5_lit == false:
+		circle.disabled = true
+
+func shutdown():
+	flame_1.visible = false
+	candle_1_lit = false
+	flame_2.visible = false
+	candle_2_lit = false
+	flame_3.visible = false
+	candle_3_lit = false
+	flame_4.visible = false
+	candle_4_lit = false
+	flame_5.visible = false
+	candle_5_lit = false
 
 func _on_firezone_1_body_entered(body: Node2D) -> void:
 	if body.has_method("fireball"):
 		print("The fire is lit")
 		flame_1.visible = true
-
+		candle_1_lit = true
 func _on_firezone_2_body_entered(body: Node2D) -> void:
 	if body.has_method("fireball"):
 		print("The fire is lit")
 		flame_2.visible = true
-
+		candle_2_lit = true
 func _on_firezone_3_body_entered(body: Node2D) -> void:
 	if body.has_method("fireball"):
 		print("The fire is lit")
 		flame_3.visible = true
-
+		candle_3_lit = true
 func _on_firezone_4_body_entered(body: Node2D) -> void:
 	if body.has_method("fireball"):
 		print("The fire is lit")
 		flame_4.visible = true
-
+		candle_4_lit = true
 func _on_firezone_5_body_entered(body: Node2D) -> void:
 	if body.has_method("fireball"):
 		print("The fire is lit")
 		flame_5.visible = true
+		candle_5_lit = true

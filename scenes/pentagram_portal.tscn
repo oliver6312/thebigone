@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5mvj1r50djxd"]
+[gd_scene load_steps=9 format=3 uid="uid://c5mvj1r50djxd"]
 
 [ext_resource type="Script" uid="uid://dodnofiefv7yp" path="res://Script/PentagramPortalMain.gd" id="1_ymu1f"]
 [ext_resource type="Texture2D" uid="uid://te7s74nqloed" path="res://0x72_DungeonTilesetII_v1.7/pentagram_portal.png" id="2_5yxc1"]
@@ -6,7 +6,10 @@
 [ext_resource type="Script" uid="uid://6napj75nlcdw" path="res://scenes/Circle_portal.gd" id="3_keddc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ymu1f"]
-radius = 11.0
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_boy5k"]
+radius = 13.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ymu1f"]
 size = Vector2(3, 6)
@@ -26,6 +29,11 @@ script = ExtResource("3_keddc")
 
 [node name="Circle" type="CollisionShape2D" parent="teleport"]
 shape = SubResource("CircleShape2D_ymu1f")
+
+[node name="teleportzone" type="Area2D" parent="teleport"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teleport/teleportzone"]
+shape = SubResource("CircleShape2D_boy5k")
 
 [node name="Candle_1" type="CollisionShape2D" parent="."]
 position = Vector2(54.5, -77.25)
@@ -111,6 +119,7 @@ shape = SubResource("CircleShape2D_keddc")
 position = Vector2(2, 86)
 texture = ExtResource("3_5yxc1")
 
+[connection signal="body_entered" from="teleport/teleportzone" to="." method="_on_teleportzone_body_entered"]
 [connection signal="body_entered" from="firezone_1" to="." method="_on_firezone_1_body_entered"]
 [connection signal="body_entered" from="firezone_2" to="." method="_on_firezone_2_body_entered"]
 [connection signal="body_entered" from="firezone_3" to="." method="_on_firezone_3_body_entered"]
