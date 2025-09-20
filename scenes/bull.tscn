@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://vbdx3k7t7mmj"]
 
-[ext_resource type="Script" uid="uid://byjic6d26kyxh" path="res://bull.gd" id="1_85vty"]
+[ext_resource type="Script" uid="uid://byjic6d26kyxh" path="res://Script/bull.gd" id="1_85vty"]
 [ext_resource type="Texture2D" uid="uid://bymkn11xdrabj" path="res://0x72_DungeonTilesetII_v1.7/frames/bull_demon_all_anim.png" id="2_g2pcm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ey5w"]

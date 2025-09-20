@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bt6t5ahupmg1u"]
 
-[ext_resource type="Script" uid="uid://btk4md0d5k7hx" path="res://Script/enemy.gd" id="1_aeauj"]
+[ext_resource type="Script" uid="uid://c44tlhb4ajl2x" path="res://scenes/bull_2.gd" id="1_obprc"]
 [ext_resource type="Texture2D" uid="uid://bymkn11xdrabj" path="res://0x72_DungeonTilesetII_v1.7/frames/bull_demon_all_anim.png" id="2_aeauj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ubi4"]
@@ -53,7 +53,7 @@ bg_color = Color(0.929412, 0.0352941, 0.105882, 1)
 
 [node name="Bull" type="CharacterBody2D"]
 motion_mode = 1
-script = ExtResource("1_aeauj")
+script = ExtResource("1_obprc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 6)
@@ -82,6 +82,7 @@ offset_right = 12.0
 offset_bottom = 2.0
 theme_override_styles/background = SubResource("StyleBoxFlat_md0e3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_4ra3w")
+max_value = 60.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
