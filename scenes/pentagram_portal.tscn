@@ -1,19 +1,118 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5mvj1r50djxd"]
+[gd_scene load_steps=8 format=3 uid="uid://c5mvj1r50djxd"]
 
 [ext_resource type="Script" uid="uid://dodnofiefv7yp" path="res://Script/PentagramPortalMain.gd" id="1_ymu1f"]
-[ext_resource type="Texture2D" uid="uid://b38vojyokbc8e" path="res://0x72_DungeonTilesetII_v1.7/pentagram_portal_no_candle.png" id="2_ymu1f"]
+[ext_resource type="Texture2D" uid="uid://te7s74nqloed" path="res://0x72_DungeonTilesetII_v1.7/pentagram_portal.png" id="2_5yxc1"]
+[ext_resource type="Texture2D" uid="uid://cuciqxlqwppi3" path="res://0x72_DungeonTilesetII_v1.7/candle_fire.png" id="3_5yxc1"]
+[ext_resource type="Script" uid="uid://6napj75nlcdw" path="res://scenes/Circle_portal.gd" id="3_keddc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ymu1f"]
 radius = 11.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymu1f"]
+size = Vector2(3, 6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_keddc"]
+radius = 5.0
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_ymu1f")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Portal" type="Sprite2D" parent="."]
 position = Vector2(6, 0)
-texture = ExtResource("2_ymu1f")
+texture = ExtResource("2_5yxc1")
 
-[node name="Circle" type="CollisionShape2D" parent="."]
-light_mask = 8
-visibility_layer = 8
+[node name="teleport" type="CharacterBody2D" parent="."]
+script = ExtResource("3_keddc")
+
+[node name="Circle" type="CollisionShape2D" parent="teleport"]
 shape = SubResource("CircleShape2D_ymu1f")
+
+[node name="Candle_1" type="CollisionShape2D" parent="."]
+position = Vector2(54.5, -77.25)
+shape = SubResource("RectangleShape2D_ymu1f")
+
+[node name="Candle_3" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 90.875)
+shape = SubResource("RectangleShape2D_ymu1f")
+
+[node name="Candle_2" type="CollisionShape2D" parent="."]
+position = Vector2(89.5, 24.9375)
+shape = SubResource("RectangleShape2D_ymu1f")
+
+[node name="Candle_5" type="CollisionShape2D" parent="."]
+position = Vector2(-48.5, -75)
+shape = SubResource("RectangleShape2D_ymu1f")
+
+[node name="Candle_4" type="CollisionShape2D" parent="."]
+position = Vector2(-85.5, 26)
+shape = SubResource("RectangleShape2D_ymu1f")
+
+[node name="firezone_1" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="firezone_1"]
+position = Vector2(55, -80)
+shape = SubResource("CircleShape2D_keddc")
+
+[node name="flame_1" type="Sprite2D" parent="."]
+position = Vector2(55, -81)
+texture = ExtResource("3_5yxc1")
+
+[node name="firezone_2" type="Area2D" parent="."]
+position = Vector2(-104, 1)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="firezone_2"]
+position = Vector2(55, -80)
+shape = SubResource("CircleShape2D_keddc")
+
+[node name="flame_2" type="Sprite2D" parent="."]
+position = Vector2(-49, -80)
+texture = ExtResource("3_5yxc1")
+
+[node name="firezone_3" type="Area2D" parent="."]
+position = Vector2(-141, 103)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="firezone_3"]
+position = Vector2(55, -80)
+shape = SubResource("CircleShape2D_keddc")
+
+[node name="flame_3" type="Sprite2D" parent="."]
+position = Vector2(-86, 22)
+texture = ExtResource("3_5yxc1")
+
+[node name="firezone_4" type="Area2D" parent="."]
+position = Vector2(34, 101)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="firezone_4"]
+position = Vector2(55, -80)
+shape = SubResource("CircleShape2D_keddc")
+
+[node name="flame_4" type="Sprite2D" parent="."]
+position = Vector2(89, 20)
+texture = ExtResource("3_5yxc1")
+
+[node name="firezone_5" type="Area2D" parent="."]
+position = Vector2(-53, 167)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="firezone_5"]
+position = Vector2(55, -80)
+shape = SubResource("CircleShape2D_keddc")
+
+[node name="flame_5" type="Sprite2D" parent="."]
+position = Vector2(2, 86)
+texture = ExtResource("3_5yxc1")
+
+[connection signal="body_entered" from="firezone_1" to="." method="_on_firezone_1_body_entered"]
+[connection signal="body_entered" from="firezone_2" to="." method="_on_firezone_2_body_entered"]
+[connection signal="body_entered" from="firezone_3" to="." method="_on_firezone_3_body_entered"]
+[connection signal="body_entered" from="firezone_4" to="." method="_on_firezone_4_body_entered"]
+[connection signal="body_entered" from="firezone_5" to="." method="_on_firezone_5_body_entered"]

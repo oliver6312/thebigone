@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=4 uid="uid://cltqmimubl5ju"]
+[gd_scene load_steps=15 format=4 uid="uid://cltqmimubl5ju"]
 
 [ext_resource type="Texture2D" uid="uid://uvc3bxls7vnf" path="res://0x72_DungeonTilesetII_v1.7/atlas_floor-16x16green.png" id="1_tefeu"]
 [ext_resource type="Texture2D" uid="uid://b1fnei54tuk41" path="res://0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32green.png" id="2_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://chtfh3sut6ev2" path="res://scenes/candle.tscn" id="3_choun"]
 [ext_resource type="PackedScene" uid="uid://bgq8ctr7k2kqp" path="res://scenes/player.tscn" id="3_tipki"]
 [ext_resource type="PackedScene" uid="uid://ddnafjru6xxit" path="res://scenes/fireball.tscn" id="4_85g3d"]
 [ext_resource type="PackedScene" uid="uid://vptyxcuxw8vd" path="res://scenes/enemy.tscn" id="5_choun"]
@@ -281,21 +280,6 @@ tile_set = SubResource("TileSet_kdubu")
 
 [node name="Portal" parent="." instance=ExtResource("7_o6xl0")]
 position = Vector2(-86, 1293)
-
-[node name="Candle_1" parent="Portal" instance=ExtResource("3_choun")]
-position = Vector2(54, -75)
-
-[node name="Candle_2" parent="Portal" instance=ExtResource("3_choun")]
-position = Vector2(91, 29)
-
-[node name="Candle_3" parent="Portal" instance=ExtResource("3_choun")]
-position = Vector2(2, 89)
-
-[node name="Candle_4" parent="Portal" instance=ExtResource("3_choun")]
-position = Vector2(-83, 26)
-
-[node name="Candle_5" parent="Portal" instance=ExtResource("3_choun")]
-position = Vector2(-47, -71)
 
 [node name="Player" parent="." instance=ExtResource("3_tipki")]
 position = Vector2(-80, 31)
