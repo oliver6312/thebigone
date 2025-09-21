@@ -9,6 +9,8 @@ extends CharacterBody2D
 @onready var teleport: CharacterBody2D = $teleport
 @onready var circle: CollisionShape2D = $teleport/Circle
 @onready var timer: Timer = $Timer
+@onready var symbols: Sprite2D = $Symbols
+
 
 var candle_1_lit = false
 var candle_2_lit = false
@@ -23,13 +25,16 @@ func _ready() -> void:
 	flame_3.visible = false
 	flame_4.visible = false
 	flame_5.visible = false
+	symbols.visible = false
 	circle.disabled = true
 
 func _physics_process(delta):
 	if candle_1_lit == true and candle_2_lit == true and candle_3_lit == true and candle_4_lit == true and candle_5_lit == true:
 		circle.disabled = false
+		symbols.visible = true
 	if candle_1_lit == false and candle_2_lit == false and candle_3_lit == false and candle_4_lit == false and candle_5_lit == false:
 		circle.disabled = true
+		symbols.visible = false
 
 func shutdown():
 	flame_1.visible = false
