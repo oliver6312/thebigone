@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=4 uid="uid://cltqmimubl5ju"]
 
 [ext_resource type="Texture2D" uid="uid://uvc3bxls7vnf" path="res://0x72_DungeonTilesetII_v1.7/atlas_floor-16x16green.png" id="1_tefeu"]
-[ext_resource type="Texture2D" path="res://0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32green.png" id="2_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://b1fnei54tuk41" path="res://0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32green.png" id="2_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bgq8ctr7k2kqp" path="res://scenes/player.tscn" id="3_tipki"]
 [ext_resource type="PackedScene" uid="uid://ddnafjru6xxit" path="res://scenes/fireball.tscn" id="4_85g3d"]
 [ext_resource type="PackedScene" uid="uid://vptyxcuxw8vd" path="res://scenes/enemy.tscn" id="5_choun"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c5mvj1r50djxd" path="res://scenes/pentagram_portal.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bt6t5ahupmg1u" path="res://scenes/bull2.tscn" id="8_85g3d"]
 [ext_resource type="PackedScene" uid="uid://xr0xi4doy1lc" path="res://scenes/hud.tscn" id="8_tipki"]
-[ext_resource type="AudioStream" path="res://0x72_DungeonTilesetII_v1.7/a_dungeon_ambience_loop-79423.mp3" id="10_choun"]
+[ext_resource type="AudioStream" uid="uid://byiyeecbp4mmh" path="res://0x72_DungeonTilesetII_v1.7/a_dungeon_ambience_loop-79423.mp3" id="10_choun"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdubu"]
 texture = ExtResource("1_tefeu")
