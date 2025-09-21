@@ -2,7 +2,7 @@ extends Timer
 
 @onready var big_demon_scene = preload("res://scenes/enemy.tscn")
 @onready var imp_scene = preload("res://scenes/imp.tscn")
-@onready var bull_scene = preload("res://scenes/bull2.tscn")
+@onready var bull_scene = preload("res://scenes/bull.tscn")
 @onready var player = get_parent()
 
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=4 uid="uid://dfol56g7ngkbh"]
 
 [ext_resource type="Script" uid="uid://dfnehxmy7id4d" path="res://Script/intro.gd" id="1_i2l1n"]
-[ext_resource type="FontFile" uid="uid://dug1cavbqanki" path="res://0x72_DungeonTilesetII_v1.7/font/DungeonFont.ttf" id="2_wfs7u"]
-[ext_resource type="Texture2D" uid="uid://dtty620gthhou" path="res://0x72_DungeonTilesetII_v1.7/turtuiel_more.webp" id="3_es01l"]
-[ext_resource type="Texture2D" uid="uid://chnd4qfydvpcp" path="res://0x72_DungeonTilesetII_v1.7/frames/fireball_all_anim.png" id="4_0naf5"]
-[ext_resource type="Texture2D" uid="uid://te7s74nqloed" path="res://0x72_DungeonTilesetII_v1.7/pentagram_portal.png" id="5_wfs7u"]
+[ext_resource type="FontFile" uid="uid://dug1cavbqanki" path="res://Graphics/font/DungeonFont.ttf" id="2_wfs7u"]
+[ext_resource type="Texture2D" uid="uid://dtty620gthhou" path="res://Graphics/turtuiel_more.webp" id="3_es01l"]
+[ext_resource type="Texture2D" uid="uid://chnd4qfydvpcp" path="res://Graphics/frames/fireball_all_anim.png" id="4_0naf5"]
+[ext_resource type="Texture2D" uid="uid://te7s74nqloed" path="res://Graphics/pentagram_portal.png" id="5_wfs7u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_62e2m"]
 texture = ExtResource("3_es01l")

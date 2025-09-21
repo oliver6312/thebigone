@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://1nlc1olbbvtk"]
 
-[ext_resource type="Script" uid="uid://hhws75whhppr" path="res://startscreen.gd" id="1_qx56x"]
-[ext_resource type="Texture2D" uid="uid://cwuwoptgcoonu" path="res://0x72_DungeonTilesetII_v1.7/gothic-castle-background.png" id="2_m1yxm"]
-[ext_resource type="FontFile" uid="uid://c3cvokyqrgrtv" path="res://0x72_DungeonTilesetII_v1.7/font/JBLACK.TTF" id="3_q30ww"]
-[ext_resource type="FontFile" uid="uid://dug1cavbqanki" path="res://0x72_DungeonTilesetII_v1.7/font/DungeonFont.ttf" id="4_7nbyq"]
-[ext_resource type="AudioStream" uid="uid://cavume4ybodcw" path="res://0x72_DungeonTilesetII_v1.7/soft-piano-inspiration-405221.mp3" id="5_7nbyq"]
+[ext_resource type="Script" uid="uid://hhws75whhppr" path="res://Script/startscreen.gd" id="1_qx56x"]
+[ext_resource type="Texture2D" uid="uid://cwuwoptgcoonu" path="res://Graphics/gothic-castle-background.png" id="2_m1yxm"]
+[ext_resource type="FontFile" uid="uid://c3cvokyqrgrtv" path="res://Graphics/font/JBLACK.TTF" id="3_q30ww"]
+[ext_resource type="FontFile" uid="uid://dug1cavbqanki" path="res://Graphics/font/DungeonFont.ttf" id="4_7nbyq"]
+[ext_resource type="AudioStream" uid="uid://cavume4ybodcw" path="res://Audio/soft-piano-inspiration-405221.mp3" id="5_7nbyq"]
 
 [node name="startscreen" type="CanvasLayer"]
 script = ExtResource("1_qx56x")

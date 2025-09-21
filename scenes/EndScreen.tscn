@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://box0negtxsu72"]
 
 [ext_resource type="Script" uid="uid://3n8b06gtaqqs" path="res://Script/gameover.gd" id="1_qfurf"]
-[ext_resource type="Texture2D" uid="uid://crkrdkh0v6an7" path="res://0x72_DungeonTilesetII_v1.7/grave_background_update.png" id="2_8gjfw"]
-[ext_resource type="FontFile" uid="uid://c3cvokyqrgrtv" path="res://0x72_DungeonTilesetII_v1.7/font/JBLACK.TTF" id="3_olkmo"]
-[ext_resource type="FontFile" uid="uid://dug1cavbqanki" path="res://0x72_DungeonTilesetII_v1.7/font/DungeonFont.ttf" id="4_hxmv1"]
+[ext_resource type="Texture2D" uid="uid://crkrdkh0v6an7" path="res://Graphics/grave_background_update.png" id="2_8gjfw"]
+[ext_resource type="FontFile" uid="uid://c3cvokyqrgrtv" path="res://Graphics/font/JBLACK.TTF" id="3_olkmo"]
+[ext_resource type="FontFile" uid="uid://dug1cavbqanki" path="res://Graphics/font/DungeonFont.ttf" id="4_hxmv1"]
 
 [node name="GameOver" type="CanvasLayer"]
 script = ExtResource("1_qfurf")

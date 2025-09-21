@@ -1,39 +1,39 @@
 [gd_scene load_steps=17 format=3 uid="uid://bgq8ctr7k2kqp"]
 
 [ext_resource type="Script" uid="uid://coe2q166i7lj4" path="res://Script/player.gd" id="1_4flbx"]
-[ext_resource type="Texture2D" uid="uid://cbug6tpubkl82" path="res://0x72_DungeonTilesetII_v1.7/frames/knight_red_all_anim.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://be12q8omdahfv" path="res://Graphics/frames/knight.png" id="2_qhqgy"]
 [ext_resource type="Script" uid="uid://cv73g1s1fb3t0" path="res://Script/enemy_spawner.gd" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
-atlas = ExtResource("2_g2els")
+atlas = ExtResource("2_qhqgy")
 region = Rect2(18, 0, 18, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
-atlas = ExtResource("2_g2els")
+atlas = ExtResource("2_qhqgy")
 region = Rect2(36, 0, 18, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
-atlas = ExtResource("2_g2els")
+atlas = ExtResource("2_qhqgy")
 region = Rect2(54, 0, 18, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
-atlas = ExtResource("2_g2els")
+atlas = ExtResource("2_qhqgy")
 region = Rect2(72, 0, 18, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
-atlas = ExtResource("2_g2els")
+atlas = ExtResource("2_qhqgy")
 region = Rect2(90, 0, 18, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
-atlas = ExtResource("2_g2els")
+atlas = ExtResource("2_qhqgy")
 region = Rect2(108, 0, 18, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
-atlas = ExtResource("2_g2els")
+atlas = ExtResource("2_qhqgy")
 region = Rect2(126, 0, 18, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
-atlas = ExtResource("2_g2els")
+atlas = ExtResource("2_qhqgy")
 region = Rect2(144, 0, 18, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nvl01"]
@@ -93,7 +93,7 @@ script = ExtResource("1_4flbx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_nvl01")
-animation = &"Run"
+animation = &"Idle"
 speed_scale = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

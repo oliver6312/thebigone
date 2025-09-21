@@ -1,38 +1,38 @@
-[gd_scene load_steps=12 format=3 uid="uid://vptyxcuxw8vd"]
+[gd_scene load_steps=12 format=3 uid="uid://bt6t5ahupmg1u"]
 
-[ext_resource type="Script" uid="uid://btk4md0d5k7hx" path="res://Script/enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://tgvgw2tnb6rb" path="res://Graphics/frames/bigdemon.png" id="2_md0e3"]
+[ext_resource type="Script" uid="uid://c44tlhb4ajl2x" path="res://Script/bull.gd" id="1_qus7o"]
+[ext_resource type="Texture2D" uid="uid://du1nacc0ixp1b" path="res://Graphics/frames/bull.png" id="2_hqf4x"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ra3w"]
-atlas = ExtResource("2_md0e3")
-region = Rect2(128, 0, 32, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ao4w"]
+atlas = ExtResource("2_hqf4x")
+region = Rect2(64, 0, 16, 23)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
-atlas = ExtResource("2_md0e3")
-region = Rect2(160, 0, 32, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkmdg"]
+atlas = ExtResource("2_hqf4x")
+region = Rect2(80, 0, 16, 23)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c4w8v"]
-atlas = ExtResource("2_md0e3")
-region = Rect2(192, 0, 32, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_63et6"]
+atlas = ExtResource("2_hqf4x")
+region = Rect2(96, 0, 16, 23)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
-atlas = ExtResource("2_md0e3")
-region = Rect2(224, 0, 32, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_l80mh"]
+atlas = ExtResource("2_hqf4x")
+region = Rect2(112, 0, 16, 23)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dxifv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4ra3w")
+"texture": SubResource("AtlasTexture_5ao4w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5uy6h")
+"texture": SubResource("AtlasTexture_mkmdg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c4w8v")
+"texture": SubResource("AtlasTexture_63et6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xwavj")
+"texture": SubResource("AtlasTexture_l80mh")
 }],
 "loop": true,
 "name": &"Run",
@@ -51,15 +51,14 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ra3w"]
 bg_color = Color(0.929412, 0.0352941, 0.105882, 1)
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Bull" type="CharacterBody2D"]
 motion_mode = 1
-script = ExtResource("1_4gyqm")
+script = ExtResource("1_qus7o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, 6)
 sprite_frames = SubResource("SpriteFrames_dxifv")
 animation = &"Run"
-frame_progress = 0.0435466
 offset = Vector2(0, -18)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -83,7 +82,7 @@ offset_right = 12.0
 offset_bottom = 2.0
 theme_override_styles/background = SubResource("StyleBoxFlat_md0e3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_4ra3w")
-max_value = 80.0
+max_value = 60.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
