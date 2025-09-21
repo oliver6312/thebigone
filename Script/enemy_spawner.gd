@@ -13,7 +13,7 @@ func spawn_new_enemy():
 	var minion_big = big_demon_scene.instantiate()
 	var minion_small = imp_scene.instantiate()
 	var minion_bull = bull_scene.instantiate()
-	var x = randf_range(-175.0, 25.0)  # your random X offset
+	var x = randf_range(-165.0, 15.0)  # your random X offset
 	var y = player.position.y + 280
 	print("Position:")
 	print(x)

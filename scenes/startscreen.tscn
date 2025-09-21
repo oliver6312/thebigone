@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://1nlc1olbbvtk"]
+[gd_scene load_steps=6 format=3 uid="uid://1nlc1olbbvtk"]
 
 [ext_resource type="Script" uid="uid://hhws75whhppr" path="res://startscreen.gd" id="1_qx56x"]
 [ext_resource type="Texture2D" uid="uid://cwuwoptgcoonu" path="res://0x72_DungeonTilesetII_v1.7/gothic-castle-background.png" id="2_m1yxm"]
 [ext_resource type="FontFile" uid="uid://c3cvokyqrgrtv" path="res://0x72_DungeonTilesetII_v1.7/font/JBLACK.TTF" id="3_q30ww"]
 [ext_resource type="FontFile" uid="uid://dug1cavbqanki" path="res://0x72_DungeonTilesetII_v1.7/font/DungeonFont.ttf" id="4_7nbyq"]
+[ext_resource type="AudioStream" uid="uid://cavume4ybodcw" path="res://0x72_DungeonTilesetII_v1.7/soft-piano-inspiration-405221.mp3" id="5_7nbyq"]
 
 [node name="startscreen" type="CanvasLayer"]
 script = ExtResource("1_qx56x")
@@ -72,6 +73,11 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_q30ww")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7nbyq")
+volume_db = -25.0
+autoplay = true
 
 [connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/GridContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/GridContainer/EndButton" to="." method="_on_end_button_pressed"]

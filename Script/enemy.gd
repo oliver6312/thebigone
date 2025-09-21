@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var enemy_health = 100
+var enemy_health = 80
 var speed = 30
 var player_chase = true
 @onready var player = get_parent().get_node("Player")
@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	if player_chase:
 		var direction = (player.position - position).normalized()
 		velocity = (direction*speed)
-		
+	
 		
 		$AnimatedSprite2D.play("Run")
 		

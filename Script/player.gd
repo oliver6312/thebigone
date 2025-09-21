@@ -47,6 +47,7 @@ func _physics_process(delta):
 	small_enemy_attack()
 	if health <= 0:
 		player_alive = false
+		speed = 0
 		if not gameover_menu:
 			gameover_menu = gameover_scene.instantiate() as GameOver
 			add_child(gameover_menu)
