@@ -5,7 +5,6 @@ extends Timer
 @onready var bull_scene = preload("res://scenes/bull.tscn")
 @onready var player = get_parent()
 
-
 func _on_timeout(): 
 	spawn_new_enemy()
 
